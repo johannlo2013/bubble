@@ -5,7 +5,7 @@ import platform
 import subprocess
 from PyQt6 import QtCore, QtGui, QtWidgets
 
-SERVER = "https://qisys.pythonanywhere.com"
+SERVER = "https://bubbleapp.pythonanywhere.com"
 POLL_INTERVAL = 1000  # ms
 
 SELF_COLOR = QtGui.QColor("#0078d7")
