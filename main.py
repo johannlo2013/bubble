@@ -108,9 +108,13 @@ class ChatWindow(QtWidgets.QWidget):
         self.v_layout.addLayout(self.input_layout)
 
         # Username
-        self.username, ok = QtWidgets.QInputDialog.getText(self,"Username","Enter your username:")
-        if not ok or not self.username.strip():
-            self.username = "Anonymous"
+        if len(sys.argv) > 1 and sys.argv[1].strip():
+            self.username = sys.argv[1]
+        else:
+            # Fallback if no username is provided
+            self.username, ok = QtWidgets.QInputDialog.getText(self,"Username","Enter your username:")
+            if not ok or not self.username.strip():
+                self.username = "Anonymous"
 
         # Cache
         self.messages_cache = []
